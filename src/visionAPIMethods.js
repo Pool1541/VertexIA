@@ -4,7 +4,11 @@ export async function labelDetection({ client, imagePath }) {
   try {
     const [results] = await client.labelDetection(imagePath);
     const labels = results.labelAnnotations;
-    return labels;
+
+    return labels.map(({ description, score }) => ({
+      description,
+      score: Number(score.toFixed(5)),
+    }));
   } catch (error) {
     throw error;
   }
