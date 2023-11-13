@@ -1,5 +1,5 @@
 import vision from '@google-cloud/vision';
-import { labelDetection } from './src/label_detection.js';
+import { labelDetection } from './src/visionAPIMethods.js';
 
 const client = new vision.ImageAnnotatorClient({
   keyFilename: 'google-cloud-key.json',
