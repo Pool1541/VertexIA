@@ -25,11 +25,10 @@ async function analyzeImage(image) {
       violento: TRANSLATED_RESULTS[detections.violence] || detections.violence,
     };
   } catch (error) {
-    throw error; // Re-lanzamos el error para que se maneje en el código que llama a esta función
+    throw error;
   }
 }
 
-// Uso de la función con .then() y .catch()
 analyzeImage('./images/wound.jpg')
   .then(console.log)
   .catch((error) => console.error('Error al analizar la imagen:', error));
