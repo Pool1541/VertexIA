@@ -39,3 +39,13 @@ export async function imageProperties({ client, imagePath }) {
     throw error;
   }
 }
+
+export async function textDetection({ client, imagePath }) {
+  try {
+    const [results] = await client.textDetection(imagePath);
+
+    return results.textAnnotations;
+  } catch (error) {
+    throw error;
+  }
+}
