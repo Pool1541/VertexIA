@@ -30,3 +30,12 @@ export async function safeSearch({ client, imagePath }) {
     throw error;
   }
 }
+
+export async function imageProperties({ client, imagePath }) {
+  try {
+    const [results] = await client.imageProperties(imagePath);
+    return results.imagePropertiesAnnotation.dominantColors.colors;
+  } catch (error) {
+    throw error;
+  }
+}
