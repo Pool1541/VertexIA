@@ -30,7 +30,7 @@ textDetection({ client, imagePath: './images/traffic-signal.png' })
           ctx.lineTo(vertex.x, vertex.y);
         }
         ctx.closePath();
-        ctx.strokeStyle = 'red';
+        ctx.strokeStyle = '#f01a0b';
         ctx.stroke();
       });
 
